@@ -1,4 +1,3 @@
--- "(WARNING: This Repository is Licensed! You are not permitted to use/copy this User Interface library)" - kiss my ass, you log data w/o stating it anywhere.
 local library = { 
 	flags = { }, 
 	items = { } 
