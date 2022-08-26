@@ -1,6 +1,3 @@
--- Luazifier v0.1
--- Settings: Mode > Table | Custom Name > false | Security > Off
-
 -- Setup:
 Luazifier = {} 
 setmetatable(Luazifier, {__metatable = "Don' t touch my table P-Pervert!"})
