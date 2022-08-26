@@ -67,7 +67,7 @@ local booths = {
 local queueonteleport = (syn and syn.queue_on_teleport) or queue_on_teleport or (fluxus and fluxus.queue_on_teleport)
 local httprequest = (syn and syn.request) or http and http.request or http_request or (fluxus and fluxus.request) or request
 local httpservice = game:GetService('HttpService')
-queueonteleport("loadstring(game:HttpGet(https://github.com/betonblyat/garbage/blob/main/donate_shit2.lua'))()")
+queueonteleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/betonblyat/garbage/main/donate_shit2.lua'))()")
 local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/betonblyat/garbage/main/DonateShitLib2.lua"))()
 getgenv().settings = {}
 --Load Settings
@@ -241,9 +241,9 @@ local danceToggle = boothTab:AddSwitch("Dance", function(bool)
     getgenv().settings.danceToggle = bool
     saveSettings()
     if bool then
-        Players:Chat("/e dance")
+        Players:Chat("/e cheer")
     else
-        Players:Chat("/e wave")
+        Players:Chat("/e cheer")
     end
 end)
 danceToggle:Set(getgenv().settings.danceToggle)
@@ -585,7 +585,7 @@ end
 Players.LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(Players.LocalPlayer.Character.HumanoidRootPart.Position, Vector3.new(40, 14, 101)))
 if getgenv().settings.danceToggle then
     wait(1)
-    Players:Chat("/e dance")
+    Players:Chat("/e cheer")
 end
 if getgenv().settings.textUpdateToggle and getgenv().settings.customBoothText then
     update()
