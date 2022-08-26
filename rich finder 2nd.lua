@@ -61,7 +61,7 @@ Luazifier.ImageLabel1.ZIndex = 1
 Luazifier.ImageLabel1.Archivable = true
 Luazifier.ImageLabel1.ClipsDescendants = false
 Luazifier.ImageLabel1.AutoLocalize = true
-Luazifier.ImageLabel1.Image = "http://www.roblox.com/asset/?id=462926828"
+Luazifier.ImageLabel1.Image = "http://www.roblox.com/asset/?id=462926828" --need new image
 Luazifier.ImageLabel1.ImageColor3 = Color3.new(1, 1, 1)
 Luazifier.ImageLabel1.ImageRectOffset = Vector2.new(0, 0)
 Luazifier.ImageLabel1.ImageRectSize = Vector2.new(0, 0)
