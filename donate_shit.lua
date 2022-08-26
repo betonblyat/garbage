@@ -52,9 +52,12 @@ local Event = game:GetService("ReplicatedStorage").Remotes
 
 local Table = {
     "🥺 My dream is buy Korblox 🥺 ",
+    "DANCING FOR ROBUX",
     "Please help me make my dream come true! 🥺",
     "Please donate! 🥰 ",
-    "😊🐈 donate for cat's 🐈😊"
+    "SINGING FOR ROBUX",
+    "😊🐈 donate for cat's 🐈😊",
+    "DANCING FOR ROBUX!"
 }
 
 
