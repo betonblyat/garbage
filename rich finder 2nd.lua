@@ -188,7 +188,7 @@ local getByName = function(N)
 end
 
 local Flag = getByName("Flag")
-local LeftSideText = getByName("Fuck")
+local LeftSideText = getByName("Hola")
 local RightSideText = getByName("Russia")
 
 while task.wait() do
