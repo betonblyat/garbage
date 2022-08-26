@@ -1,6 +1,6 @@
 -- Setup:
 Luazifier = {} 
-setmetatable(Luazifier, {__metatable = "chronometrical.solution"})
+setmetatable(Luazifier, {__metatable = "Ill break ur freaking your legs 😅"})
 
 -- Instances:
 Luazifier.ScreenGui1 = Instance.new("ScreenGui", game:GetService("CoreGui"))
