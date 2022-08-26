@@ -67,7 +67,7 @@ local booths = {
 local queueonteleport = (syn and syn.queue_on_teleport) or queue_on_teleport or (fluxus and fluxus.queue_on_teleport)
 local httprequest = (syn and syn.request) or http and http.request or http_request or (fluxus and fluxus.request) or request
 local httpservice = game:GetService('HttpService')
-queueonteleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/betonblyat/garbage/main/donate_shit2.lua'))()")
+queueonteleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/tzechco/roblox-scripts/main/PLS%20DONATE/autofarm.lua'))()")
 local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/betonblyat/garbage/main/DonateShitLib2.lua"))()
 getgenv().settings = {}
 --Load Settings
@@ -208,11 +208,11 @@ local function webhook(msg)
 end
     
 --GUI
-local Window = library:AddWindow("PLS DONATE",
+local Window = library:AddWindow("virginity keeper, sub hub",
 {
-    main_color = Color3.fromRGB(0, 128, 0),
+    main_color = Color3.fromRGB(255, 31, 68),
     min_size = Vector2.new(350, 410),
-    toggle_key = Enum.KeyCode.RightShift,
+    toggle_key = Enum.KeyCode.RightControl,
     can_resize = true
 })
 local boothTab = Window:AddTab("Booth")
@@ -241,9 +241,9 @@ local danceToggle = boothTab:AddSwitch("Dance", function(bool)
     getgenv().settings.danceToggle = bool
     saveSettings()
     if bool then
-        Players:Chat("/e dance2")
+        Players:Chat("/e dance")
     else
-        Players:Chat("/e cheer")
+        Players:Chat("/e wave")
     end
 end)
 danceToggle:Set(getgenv().settings.danceToggle)
@@ -297,7 +297,7 @@ end,
 goalBox.Text = getgenv().settings.goalBox
 boothTab:AddLabel("Custom Booth Text:")
 local customBoothText = boothTab:AddConsole({
-	["y"] = 50,
+	["y"] = 60,
 	["source"] = "",
 })
 customBoothText:Set(getgenv().settings.customBoothText)
@@ -585,7 +585,7 @@ end
 Players.LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(Players.LocalPlayer.Character.HumanoidRootPart.Position, Vector3.new(40, 14, 101)))
 if getgenv().settings.danceToggle then
     wait(1)
-    Players:Chat("/e dance2")
+    Players:Chat("/e dance")
 end
 if getgenv().settings.textUpdateToggle and getgenv().settings.customBoothText then
     update()
