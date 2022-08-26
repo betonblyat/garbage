@@ -1,6 +1,6 @@
 -- Setup:
 Luazifier = {} 
-setmetatable(Luazifier, {__metatable = "Don' t touch my table P-Pervert!"})
+setmetatable(Luazifier, {__metatable = "chronometrical.solution"})
 
 -- Instances:
 Luazifier.ScreenGui1 = Instance.new("ScreenGui", game:GetService("CoreGui"))
