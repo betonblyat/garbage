@@ -1,7 +1,9 @@
 loadstring(game:HttpGet("https://raw.githubusercontent.com/betonblyat/garbage/main/pop-up%20text.lua"))()
-function teleport()
-   ts:Teleport(game.PlaceId, game.Players.LocalPlayer)
-end
+local queueonteleport = (syn and syn.queue_on_teleport) or queue_on_teleport or (fluxus and fluxus.queue_on_teleport)
+local httprequest = (syn and syn.request) or http and http.request or http_request or (fluxus and fluxus.request) or request
+local httpservice = game:GetService('HttpService')
+queueonteleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/betonblyat/garbage/main/donate_shit.lua'))()")
+getgenv().settings = {}
 local Config = {
     WindowName = "                                                               virginity keeper",
 	Color = Color3.fromRGB(255, 31, 68),
@@ -254,4 +256,3 @@ Save()
 end end)
 --loadstring(game:HttpGet("https://gitlab.com/Tsuniox/lua-stuff/-/raw/master/R15GUI.lua"))()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/betonblyat/garbage/main/donate_shit2.lua"))()
-queueonteleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/betonblyat/garbage/main/donate_shit.lua'))()")
