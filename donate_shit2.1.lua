@@ -500,7 +500,7 @@ end,
 webhookBox.Text = getgenv().settings.webhookBox
 webhookTab:AddButton("Test Message", function()
     if getgenv().settings.webhookBox then
-        webhook("Test")
+        webhook("Bot succesfully connected!")
     end
 end)
 
