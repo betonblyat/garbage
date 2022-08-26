@@ -1,10 +1,13 @@
 loadstring(game:HttpGet("https://raw.githubusercontent.com/betonblyat/garbage/main/pop-up%20text.lua"))()
+function teleport()
+   ts:Teleport(game.PlaceId, game.Players.LocalPlayer)
+end
 local Config = {
     WindowName = "                                                               virginity keeper",
 	Color = Color3.fromRGB(255, 31, 68),
 	Keybind = Enum.KeyCode.RightControl
 }
-repeat wait() until game:IsLoaded() wait() 
+repeat wait(1) until game:IsLoaded() wait(1) 
 game:GetService("Players").LocalPlayer.Idled:connect(function()
 game:GetService("VirtualUser"):ClickButton2(Vector2.new())
 end)
