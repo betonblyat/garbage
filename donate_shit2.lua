@@ -241,7 +241,7 @@ local danceToggle = boothTab:AddSwitch("Dance", function(bool)
     getgenv().settings.danceToggle = bool
     saveSettings()
     if bool then
-        Players:Chat("/e cheer")
+        Players:Chat("/e dance2")
     else
         Players:Chat("/e cheer")
     end
@@ -585,7 +585,7 @@ end
 Players.LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(Players.LocalPlayer.Character.HumanoidRootPart.Position, Vector3.new(40, 14, 101)))
 if getgenv().settings.danceToggle then
     wait(1)
-    Players:Chat("/e cheer")
+    Players:Chat("/e dance2")
 end
 if getgenv().settings.textUpdateToggle and getgenv().settings.customBoothText then
     update()
