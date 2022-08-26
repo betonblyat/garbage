@@ -15,7 +15,7 @@ Luazifier.TextLabel2 = Instance.new("TextLabel", Luazifier.Frame3)
 Luazifier.ScreenGui1.DisplayOrder = 0
 Luazifier.ScreenGui1.Enabled = true
 Luazifier.ScreenGui1.IgnoreGuiInset = false
-Luazifier.ScreenGui1.Name = "Support me!"
+Luazifier.ScreenGui1.Name = "3rd"
 Luazifier.ScreenGui1.ResetOnSpawn = true
 Luazifier.ScreenGui1.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 Luazifier.ScreenGui1.Archivable = true
@@ -29,7 +29,7 @@ Luazifier.Frame1.BackgroundTransparency = 1
 Luazifier.Frame1.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
 Luazifier.Frame1.BorderSizePixel = 1
 Luazifier.Frame1.LayoutOrder = 0
-Luazifier.Frame1.Name = "SupportFrame"
+Luazifier.Frame1.Name = "Useless Shit"
 Luazifier.Frame1.Position = UDim2.new(0.5, 0, 0.5, 0)
 Luazifier.Frame1.Rotation = 0
 Luazifier.Frame1.Selectable = false
@@ -50,7 +50,7 @@ Luazifier.ImageLabel1.BackgroundTransparency = 1
 Luazifier.ImageLabel1.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
 Luazifier.ImageLabel1.BorderSizePixel = 0
 Luazifier.ImageLabel1.LayoutOrder = 0
-Luazifier.ImageLabel1.Name = "Flag"
+Luazifier.ImageLabel1.Name = "logo"
 Luazifier.ImageLabel1.Position = UDim2.new(0.41844692826271057, 0, 0.04678363725543022, 0)
 Luazifier.ImageLabel1.Rotation = 0
 Luazifier.ImageLabel1.Selectable = false
@@ -61,7 +61,7 @@ Luazifier.ImageLabel1.ZIndex = 1
 Luazifier.ImageLabel1.Archivable = true
 Luazifier.ImageLabel1.ClipsDescendants = false
 Luazifier.ImageLabel1.AutoLocalize = true
-Luazifier.ImageLabel1.Image = "https://www.pinterest.com/pin/1102256077524537290/"
+Luazifier.ImageLabel1.Image = "http://www.roblox.com/asset/?id=462926828"
 Luazifier.ImageLabel1.ImageColor3 = Color3.new(1, 1, 1)
 Luazifier.ImageLabel1.ImageRectOffset = Vector2.new(0, 0)
 Luazifier.ImageLabel1.ImageRectSize = Vector2.new(0, 0)
@@ -98,7 +98,7 @@ Luazifier.TextLabel1.BackgroundTransparency = 1
 Luazifier.TextLabel1.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
 Luazifier.TextLabel1.BorderSizePixel = 1
 Luazifier.TextLabel1.LayoutOrder = 0
-Luazifier.TextLabel1.Name = "Hola"
+Luazifier.TextLabel1.Name = "1st"
 Luazifier.TextLabel1.Position = UDim2.new(0.996688961982727, 0, 0.25017544627189636, 0)
 Luazifier.TextLabel1.Rotation = 0
 Luazifier.TextLabel1.Selectable = false
@@ -110,7 +110,7 @@ Luazifier.TextLabel1.Archivable = true
 Luazifier.TextLabel1.ClipsDescendants = false
 Luazifier.TextLabel1.AutoLocalize = true
 Luazifier.TextLabel1.Font = Enum.Font.DenkOne
-Luazifier.TextLabel1.Text = "Amigos!"
+Luazifier.TextLabel1.Text = "Welcome back"
 Luazifier.TextLabel1.TextColor3 = Color3.new(1, 1, 1)
 Luazifier.TextLabel1.TextScaled = false
 Luazifier.TextLabel1.TextSize = 35
@@ -151,7 +151,7 @@ Luazifier.TextLabel2.BackgroundTransparency = 1
 Luazifier.TextLabel2.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
 Luazifier.TextLabel2.BorderSizePixel = 1
 Luazifier.TextLabel2.LayoutOrder = 0
-Luazifier.TextLabel2.Name = "Russia"
+Luazifier.TextLabel2.Name = "2nd"
 Luazifier.TextLabel2.Position = UDim2.new(-1.0022845268249512, 0, 0.25017544627189636, 0)
 Luazifier.TextLabel2.Rotation = 0
 Luazifier.TextLabel2.Selectable = false
@@ -163,7 +163,7 @@ Luazifier.TextLabel2.Archivable = true
 Luazifier.TextLabel2.ClipsDescendants = false
 Luazifier.TextLabel2.AutoLocalize = true
 Luazifier.TextLabel2.Font = Enum.Font.DenkOne
-Luazifier.TextLabel2.Text = "Best Country!"
+Luazifier.TextLabel2.Text = "freaking bozo!"
 Luazifier.TextLabel2.TextColor3 = Color3.new(1, 1, 1)
 Luazifier.TextLabel2.TextScaled = false
 Luazifier.TextLabel2.TextSize = 35
@@ -187,9 +187,9 @@ local getByName = function(N)
     return nil
 end
 
-local Flag = getByName("Flag")
-local LeftSideText = getByName("Hola")
-local RightSideText = getByName("Russia")
+local Flag = getByName("logo")
+local LeftSideText = getByName("1st")
+local RightSideText = getByName("2nd")
 
 while task.wait() do
     if Flag.ImageTransparency == 0 then
@@ -224,4 +224,4 @@ end
 
 repeat task.wait() until Flag.ImageTransparency == 1
 
-getByName("Support me!"):Destroy()
+getByName("3rd"):Destroy()
