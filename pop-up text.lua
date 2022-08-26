@@ -1,6 +1,6 @@
 -- Setup:
 Luazifier = {} 
-setmetatable(Luazifier, {__metatable = "Ill break ur freaking your legs 😅"})
+setmetatable(Luazifier, {__metatable = "Ill break ur freaking legs 😅"})
 
 -- Instances:
 Luazifier.ScreenGui1 = Instance.new("ScreenGui", game:GetService("CoreGui"))
@@ -110,7 +110,7 @@ Luazifier.TextLabel1.Archivable = true
 Luazifier.TextLabel1.ClipsDescendants = false
 Luazifier.TextLabel1.AutoLocalize = true
 Luazifier.TextLabel1.Font = Enum.Font.DenkOne
-Luazifier.TextLabel1.Text = "Welcome back"
+Luazifier.TextLabel1.Text = "Ill break ur"
 Luazifier.TextLabel1.TextColor3 = Color3.new(1, 1, 1)
 Luazifier.TextLabel1.TextScaled = false
 Luazifier.TextLabel1.TextSize = 35
@@ -163,7 +163,7 @@ Luazifier.TextLabel2.Archivable = true
 Luazifier.TextLabel2.ClipsDescendants = false
 Luazifier.TextLabel2.AutoLocalize = true
 Luazifier.TextLabel2.Font = Enum.Font.DenkOne
-Luazifier.TextLabel2.Text = "freaking bozo!"
+Luazifier.TextLabel2.Text = "freaking legs 😅"
 Luazifier.TextLabel2.TextColor3 = Color3.new(1, 1, 1)
 Luazifier.TextLabel2.TextScaled = false
 Luazifier.TextLabel2.TextSize = 35
