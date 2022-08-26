@@ -61,7 +61,7 @@ Luazifier.ImageLabel1.ZIndex = 1
 Luazifier.ImageLabel1.Archivable = true
 Luazifier.ImageLabel1.ClipsDescendants = false
 Luazifier.ImageLabel1.AutoLocalize = true
-Luazifier.ImageLabel1.Image = "http://www.roblox.com/asset/?id=	265790769" --need new image
+Luazifier.ImageLabel1.Image = "http://www.roblox.com/asset/?id=10719970154" --need new image
 Luazifier.ImageLabel1.ImageColor3 = Color3.new(1, 1, 1)
 Luazifier.ImageLabel1.ImageRectOffset = Vector2.new(0, 0)
 Luazifier.ImageLabel1.ImageRectSize = Vector2.new(0, 0)
@@ -110,7 +110,7 @@ Luazifier.TextLabel1.Archivable = true
 Luazifier.TextLabel1.ClipsDescendants = false
 Luazifier.TextLabel1.AutoLocalize = true
 Luazifier.TextLabel1.Font = Enum.Font.DenkOne
-Luazifier.TextLabel1.Text = "Ill break ur"
+Luazifier.TextLabel1.Text = "I will break ur"
 Luazifier.TextLabel1.TextColor3 = Color3.new(1, 1, 1)
 Luazifier.TextLabel1.TextScaled = false
 Luazifier.TextLabel1.TextSize = 35
