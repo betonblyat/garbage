@@ -83,7 +83,7 @@ end
 
 function library:CreateWatermark(name, position)
     local gamename = game.Name -- marketplaceservice:GetProductInfo(game.PlaceId).Name
-    local watermark = { }
+    local watermark = {Virginity}
     watermark.Visible = true
     watermark.text = " " .. name:gsub("{game}", gamename):gsub("{fps}", "0 FPS") .. " "
 
