@@ -21,7 +21,7 @@ library.theme = {
     fontsize = 15,
     titlesize = 18,
     font = Enum.Font.Code,
-    background = "rbxassetid://10719970154", --http://www.roblox.com/asset/?id=11053244025 --rbxassetid://5553946656
+    background = "rbxassetid://5553946656", --http://www.roblox.com/asset/?id=11053244025 --rbxassetid://5553946656
     tilesize = 90,
     cursor = false,
     cursorimg = "https://i.pinimg.com/originals/df/5e/5f/df5e5f8036187b9141cf5115c565e878.jpg",
