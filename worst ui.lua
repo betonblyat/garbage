@@ -45,7 +45,7 @@ library.theme = {
 
 if not _G.AccentColors then
     _G.AccentColors = {
-        Accent1 = Color3.fromRGB(252, 255, 255),
+        Accent1 = Color3.fromRGB(255, 54, 114),
         Accent2 = Color3.fromRGB(255, 255, 255)
     }
 end
