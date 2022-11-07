@@ -81,10 +81,6 @@ Visuals:AddToggle('Ticket', true, function(State)
     Esp.TicketEsp = State
 end)
 
-Visuals:AddToggle('Downed', false, function(State)
-    Settings.Downedplayeresp = State
-end)
-
 Visuals:AddToggle('Boxes', true, function(State)
     Esp.Boxes = State
 end)
@@ -100,11 +96,6 @@ end)
 Visuals:AddColorpicker("Player Color", Color3.fromRGB(0, 255, 30), function(Color)
     Settings.PlayerColor = Color
 end)
-
-Visuals:AddColorpicker("Downed Player Color", Color3.fromRGB(122, 122, 122), function(Color)
-    Settings.DownedColor = Color
-end)
-
 
 Credits:AddLabel("        @Clorium       ")
 Credits:AddLabel("  Gui bind - RightCtrl ")
