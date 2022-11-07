@@ -77,6 +77,10 @@ Visuals:AddToggle('NextBot', true, function(State)
     Esp.NPCs = State
 end)
 
+Visuals:AddToggle('Ticket', true, function(State)
+    Esp.TicketEsp = State
+end)
+
 Visuals:AddToggle('Downed', false, function(State)
     Settings.Downedplayeresp = State
 end)
@@ -163,6 +167,12 @@ Esp:AddObjectListener(WorkspacePlayers, {
         return '[AI] '..obj.Name
     end,
     IsEnabled = "NPCs",
+})
+
+Esp:AddObjectListener(game:GetService("Workspace").Game.Effects.Tickets, {
+    CustomName = "Ticket",
+    Color = Color3.fromRGB(41,180,255),
+    IsEnabled = "TicketEsp"
 })
 
 --Tysm CJStylesOrg
