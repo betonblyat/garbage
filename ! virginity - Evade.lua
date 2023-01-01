@@ -77,7 +77,7 @@ Visuals:AddToggle('NextBot', true, function(State)
     Esp.NPCs = State
 end)
 
-Visuals:AddToggle('Ticket', true, function(State)
+Visuals:AddToggle('Event item's', true, function(State)
     Esp.TicketEsp = State
 end)
 
