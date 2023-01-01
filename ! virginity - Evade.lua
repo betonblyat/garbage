@@ -77,8 +77,8 @@ Visuals:AddToggle('NextBot', true, function(State)
     Esp.NPCs = State
 end)
 
-Visuals:AddToggle('Event item's', true, function(State)
-    Esp.TicketEsp = State
+Visuals:AddToggle('Event item', true, function(State)
+    Esp.Event item = State
 end)
 
 Visuals:AddToggle('Boxes', true, function(State)
@@ -163,7 +163,7 @@ Esp:AddObjectListener(WorkspacePlayers, {
 Esp:AddObjectListener(game:GetService("Workspace").Game.Effects.Tickets, {
     CustomName = "Event item",
     Color = Color3.fromRGB(41,180,255),
-    IsEnabled = "TicketEsp"
+    IsEnabled = "Event item"
 })
 
 --Tysm CJStylesOrg
