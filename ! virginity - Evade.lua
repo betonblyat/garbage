@@ -161,9 +161,9 @@ Esp:AddObjectListener(WorkspacePlayers, {
 })
 
 Esp:AddObjectListener(game:GetService("Workspace").Game.Effects.Tickets, {
-    CustomName = "Event item",
+    CustomName = "Ticket ESP",
     Color = Color3.fromRGB(41,180,255),
-    IsEnabled = "Event item"
+    IsEnabled = "Ticket ESP"
 })
 
 --Tysm CJStylesOrg
