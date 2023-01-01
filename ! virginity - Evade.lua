@@ -77,8 +77,8 @@ Visuals:AddToggle('NextBot', true, function(State)
     Esp.NPCs = State
 end)
 
-Visuals:AddToggle('Event item's', true, function(State)
-    Esp.Event item's = State
+Visuals:AddToggle('Event items', true, function(State)
+    Esp.Ticket = State
 end)
 
 Visuals:AddToggle('Boxes', true, function(State)
@@ -161,9 +161,9 @@ Esp:AddObjectListener(WorkspacePlayers, {
 })
 
 Esp:AddObjectListener(game:GetService("Workspace").Game.Effects.Tickets, {
-    CustomName = "Event item's",
+    CustomName = "Ticket",
     Color = Color3.fromRGB(41,180,255),
-    IsEnabled = "Event item's"
+    IsEnabled = "Ticket"
 })
 
 --Tysm CJStylesOrg
@@ -229,4 +229,3 @@ local GC = getconnections or get_signal_cons
 			VirtualUser:ClickButton2(Vector2.new())
 		end)
 	end
-print("Infinite yield's Anti afk")
