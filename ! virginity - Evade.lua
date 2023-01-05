@@ -55,7 +55,7 @@ end)
 
 Gamesec:AddToggle('Fast Revive', false, function(State)
     if State then
-        workspace.Game.Settings:SetAttribute("ReviveTime", 2.2)
+        workspace.Game.Settings:SetAttribute("ReviveTime", 1.1)
     else
         workspace.Game.Settings:SetAttribute("ReviveTime", Settings.reviveTime)
     end
@@ -77,6 +77,7 @@ end)
 
 EvadeSector:AddToggle('Click delete', false, function(State)
     Settings.ClickDelete = state
+end)
 
 local Plr = game:GetService("Players").LocalPlayer
 local Mouse = Plr:GetMouse()
@@ -151,7 +152,7 @@ local revive = function()
         task.spawn(function()
             while task.wait() do
                 if localplayer.Character then
-                    workspace.Game.Settings:SetAttribute("ReviveTime", 2.2)
+                    workspace.Game.Settings:SetAttribute("ReviveTime", 1.1)
                     localplayer.Character:FindFirstChild('HumanoidRootPart').CFrame = CFrame.new(downedplr:FindFirstChild('HumanoidRootPart').Position.X, downedplr:FindFirstChild('HumanoidRootPart').Position.Y + 3, downedplr:FindFirstChild('HumanoidRootPart').Position.Z)
                     task.wait()
                     game:GetService("ReplicatedStorage").Events.Revive.RevivePlayer:FireServer(tostring(downedplr), false)
@@ -188,7 +189,7 @@ Esp:AddObjectListener(WorkspacePlayers, {
 })
 
 Esp:AddObjectListener(game:GetService("Workspace").Game.Effects.Tickets, {
-    CustomName = "Event item",
+    CustomName = "Event Item",
     Color = Color3.fromRGB(115, 230, 0),
     IsEnabled = "Ticket"
 })
