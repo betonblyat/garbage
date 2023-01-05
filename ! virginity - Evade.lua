@@ -77,7 +77,7 @@ end)
 
 EvadeSector:AddToggle('Click delete', false, function(State)
     Settings.ClickDelete = state
-end)
+
 local Plr = game:GetService("Players").LocalPlayer
 local Mouse = Plr:GetMouse()
 Mouse.Button1Down:connect(function()
