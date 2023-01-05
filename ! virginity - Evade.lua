@@ -33,8 +33,8 @@ getgenv().Settings = {
     NoCameraShake = false,
     Downedplayeresp = false,
     AutoRespawn = false,
-    ClickdDelete = false,
-    ClickTP = false,
+    --ClickdDelete = false,
+    --ClickTP = false,
     Speed = 1450,
     Jump = 3,
     reviveTime = 3,
@@ -77,9 +77,9 @@ end)
 
 EvadeSector:AddToggle('Click delete', false, function(State)
     Settings.ClickDelete = state
-end)
+--end)
 
-if Settings.ClickDelete = true, then
+--if Settings.ClickDelete = true, then
   local Plr = game:GetService("Players").LocalPlayer
   local Mouse = Plr:GetMouse()
   Mouse.Button1Down:connect(function()
@@ -97,7 +97,7 @@ Farms:AddToggle('Full AFK', false, function(State)
 end)
 
 
-Visuals:AddToggle('>Enable<', true, function(State)
+Visuals:AddToggle('Enable ESP', true, function(State)
     Esp.Enabled = State
 end)
 
