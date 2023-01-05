@@ -12,7 +12,7 @@ local Window = Library:CreateWindow("Virginity", Vector2.new(400, 350), Enum.Key
 local Evade = Window:CreateTab("Main")
 local Gamee = Window:CreateTab("Misc")
 
-local EvadeSector = Evade:CreateSector("Respawn Tool's", "left")
+local EvadeSector = Evade:CreateSector("Utility tool's", "left")
 local Visuals = Evade:CreateSector("ESP", "right")
 local Credits = Evade:CreateSector("Paster's", "left")
 local Farms = Evade:CreateSector("Auto", "right")
@@ -58,6 +58,17 @@ end)
 
 EvadeSector:AddButton('Respawn',function()
     game:GetService("ReplicatedStorage").Events.Respawn:FireServer()
+end)
+
+EvadeSector:AddButton('Rejoin', function()
+    addcmd('rejoin',{'rj'},function(args, speaker)
+	if #Players:GetPlayers() <= 1 then
+		Players.LocalPlayer:Kick("\nRejoining...")
+		wait()
+		TeleportService:Teleport(PlaceId, Players.LocalPlayer)
+	else
+		TeleportService:TeleportToPlaceInstance(PlaceId, JobId, Players.LocalPlayer)
+	end
 end)
 
 Farms:AddToggle('Money farm', false, function(State)
