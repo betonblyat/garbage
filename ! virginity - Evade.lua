@@ -33,6 +33,8 @@ getgenv().Settings = {
     NoCameraShake = false,
     Downedplayeresp = false,
     AutoRespawn = false,
+    clickdelete = false,
+    clicktp = false,
     Speed = 1450,
     Jump = 3,
     reviveTime = 3,
@@ -71,6 +73,18 @@ EvadeSector:AddButton('Rejoin', function()
 local tpservice= game:GetService("TeleportService")
 local plr = game.Players.LocalPlayer
 tpservice:Teleport(game.PlaceId, plr)
+end)
+
+EvadeSector:AddToggle('Click delete', false, function(State)
+    Settings.clickdelete = state
+
+local Plr = game:GetService("Players").LocalPlayer
+local Mouse = Plr:GetMouse()
+Mouse.Button1Down:connect(function()
+if not game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.LeftControl) then return end
+if not Mouse.Target then return end
+Mouse.Target:Destroy()
+
 end)
 
 Farms:AddToggle('Money farm', false, function(State)
