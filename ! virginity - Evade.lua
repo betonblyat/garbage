@@ -79,9 +79,6 @@ EvadeSector:AddToggle('Click delete', false, function(State)
     Settings.ClickDelete = state
 end)
 
-if Settings.clickDelete = true
-then
-
 local Plr = game:GetService("Players").LocalPlayer
 local Mouse = Plr:GetMouse()
 Mouse.Button1Down:connect(function()
@@ -92,7 +89,8 @@ Mouse.Target.Transparency = 1
 Mouse.Target.CanCollide = false
 elseif Mouse.Target.Transparency == 1 then
 Mouse.Target.Transparency = 0
-  end)
+Mouse.Target.CanCollide = true
+end)
 
 Farms:AddToggle('Money farm', false, function(State)
     Settings.moneyfarm = State
