@@ -803,7 +803,7 @@ function library:CreateWindow(name, size, hidebutton)
                 toggle.Main.Size = UDim2.fromOffset(8, 8)
                 toggle.Main.AutoButtonColor = false
                 toggle.Main.ZIndex = 5
-                toggle.Main.Font = Enum.Font.Tahoma
+                toggle.Main.Font = Enum.Font.SourceSans
                 toggle.Main.Text = ""
                 toggle.Main.TextColor3 = Color3.fromRGB(0, 0, 0)
                 toggle.Main.TextSize = 15
