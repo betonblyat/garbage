@@ -61,13 +61,9 @@ EvadeSector:AddButton('Respawn',function()
 end)
 
 EvadeSector:AddButton('Rejoin', function()
-	if #Players:GetPlayers() <= 1 then
-		Players.LocalPlayer:Kick("\nRejoining...")
-		wait()
-		TeleportService:Teleport(PlaceId, Players.LocalPlayer)
-	else
-		TeleportService:TeleportToPlaceInstance(PlaceId, JobId, Players.LocalPlayer)
-	end
+local tpservice= game:GetService("TeleportService")
+local plr = game.Players.LocalPlayer
+tpservice:Teleport(game.PlaceId, plr)
 end)
 
 Farms:AddToggle('Money farm', false, function(State)
