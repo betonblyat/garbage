@@ -61,7 +61,6 @@ EvadeSector:AddButton('Respawn',function()
 end)
 
 EvadeSector:AddButton('Rejoin', function()
-    addcmd('rejoin',{'rj'},function(args, speaker)
 	if #Players:GetPlayers() <= 1 then
 		Players.LocalPlayer:Kick("\nRejoining...")
 		wait()
