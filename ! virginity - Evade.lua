@@ -15,17 +15,13 @@ Esp.Enabled = false
 Esp.Tracers = false
 Esp.Boxes = false
 
-local Window = Library:CreateWindow("Virginity", Vector2.new(400, 350), Enum.KeyCode.RightControl)
+local Window = Library:CreateWindow("Virginity 🥵", Vector2.new(400, 350), Enum.KeyCode.RightControl)
 local Evade = Window:CreateTab("Main")
-local Gamee = Window:CreateTab("Misc")
 
 local EvadeSector = Evade:CreateSector("Utility tool's", "left")
-local Visuals = Evade:CreateSector("ESP", "right")
-local Credits = Evade:CreateSector("Paster's", "left")
-local Farms = Evade:CreateSector("Auto", "right")
-
-local Gamesec = Gamee:CreateSector("2rd Util's", "right")
-local World = Gamee:CreateSector("1st Util's", "left")
+local Visuals = Evade:CreateSector("Visuals", "right")
+local Credits = Evade:CreateSector("Who paste?", "left")
+local Farms = Evade:CreateSector("AutoFarm", "right")
 
 getgenv().Settings = {
     moneyfarm = false,
@@ -33,7 +29,7 @@ getgenv().Settings = {
     NoCameraShake = false,
     Downedplayeresp = false,
     AutoRespawn = false,
-    --ClickdDelete = false,
+    ClickdDelete = false,
     ClickTP = false,
     Speed = 1450,
     Jump = 3,
@@ -42,23 +38,8 @@ getgenv().Settings = {
     PlayerColor = Color3.fromRGB(255,170,0),
 }
 
-World:AddButton('Full Bright', function()
-   	Game.Lighting.Brightness = 4
-	Game.Lighting.FogEnd = 100000
-	Game.Lighting.GlobalShadows = false
-    Game.Lighting.ClockTime = 12
-end)
-
-World:AddToggle('No Camshake', false, function(State)
+Visuals:AddToggle('No Camshake', false, function(State)
     Settings.NoCameraShake = State
-end)
-
-Gamesec:AddToggle('Fast Revive', false, function(State)
-    if State then
-        workspace.Game.Settings:SetAttribute("ReviveTime", 1.1)
-    else
-        workspace.Game.Settings:SetAttribute("ReviveTime", Settings.reviveTime)
-    end
 end)
 
 EvadeSector:AddToggle('Auto Respawn', false, function(State)
@@ -75,14 +56,30 @@ local plr = game.Players.LocalPlayer
 tpservice:Teleport(game.PlaceId, plr)
 end)
 
-EvadeSector:AddButton('Click delete', false, function(false)
-local Plr = game:GetService("Players").LocalPlayer
-local Mouse = Plr:GetMouse()
-Mouse.Button1Down:connect(function()
-if not game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.LeftControl) then return end
-if not Mouse.Target then return end
-Mouse.Target:Destroy()
+EvadeSector:AddLabel('', false, function(State)
 end)
+
+EvadeSector:AddToggle('ClickDel - not work', false, function(State)
+	Settings.ClickDelete = State
+end)
+--local Plr = game:GetService("Players").LocalPlayer
+--local Mouse = Plr:GetMouse()
+--Mouse.Button1Down:connect(function()
+--if not game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.LeftControl) then return end
+--if not Mouse.Target then return end
+--Mouse.Target:Destroy()
+--end)
+
+EvadeSector:AddToggle('ClickTP - not work', false, function(State)
+	Settings.ClickTP = State
+end)
+--local Plr = game:GetService("Players").LocalPlayer
+--local Mouse = Plr:GetMouse()
+--Mouse.Button1Down:connect(function()
+--if not game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.LeftControl) then return end
+--if not Mouse.Target then return end
+--Plr.Character:MoveTo(Mouse.Hit.p)
+--end)
 
 Farms:AddToggle('Money farm', false, function(State)
     Settings.moneyfarm = State
@@ -92,12 +89,11 @@ Farms:AddToggle('Full AFK', false, function(State)
     Settings.afkfarm = State
 end)
 
-
 Visuals:AddToggle('Enable ESP', true, function(State)
     Esp.Enabled = State
 end)
 
-Visuals:AddToggle('NextBot', true, function(State)
+Visuals:AddToggle('NextBots', true, function(State)
     Esp.NPCs = State
 end)
 
@@ -121,8 +117,10 @@ Visuals:AddColorpicker("Player Color", Color3.fromRGB(0, 255, 30), function(Colo
     Settings.PlayerColor = Color
 end)
 
-Credits:AddLabel("        @Clorium       ")
-Credits:AddLabel("  Gui bind - RightCtrl ")
+Credits:AddLabel("@Clorium ")
+Credits:AddLabel("Gui bind - RightCtrl ")
+Credits:AddLabel(" ")
+Credits:AddLabel("github.com/betonblyat")
 
 local FindAI = function()
     for _,v in pairs(WorkspacePlayers:GetChildren()) do
@@ -148,7 +146,7 @@ local revive = function()
         task.spawn(function()
             while task.wait() do
                 if localplayer.Character then
-                    workspace.Game.Settings:SetAttribute("ReviveTime", 1.1)
+                    workspace.Game.Settings:SetAttribute("ReviveTime", 2.2)
                     localplayer.Character:FindFirstChild('HumanoidRootPart').CFrame = CFrame.new(downedplr:FindFirstChild('HumanoidRootPart').Position.X, downedplr:FindFirstChild('HumanoidRootPart').Position.Y + 3, downedplr:FindFirstChild('HumanoidRootPart').Position.Z)
                     task.wait()
                     game:GetService("ReplicatedStorage").Events.Revive.RevivePlayer:FireServer(tostring(downedplr), false)
@@ -163,7 +161,7 @@ local revive = function()
     end
 end
 
---Kiriot
+--NexBot ESP
 Esp:AddObjectListener(WorkspacePlayers, {
     Color =  Color3.fromRGB(255,0,0),
     Type = "Model",
@@ -179,7 +177,7 @@ Esp:AddObjectListener(WorkspacePlayers, {
         return not game.Players:GetPlayerFromCharacter(obj)
     end,
     CustomName = function(obj)
-        return '[AI] '..obj.Name
+        return ' '..obj.Name --return '[AI] '..obj.Name
     end,
     IsEnabled = "NPCs",
 })
@@ -190,7 +188,7 @@ Esp:AddObjectListener(game:GetService("Workspace").Game.Effects.Tickets, {
     IsEnabled = "Ticket"
 })
 
---Tysm CJStylesOrg
+--ESP
 Esp.Overrides.GetColor = function(char)
    local GetPlrFromChar = Esp:GetPlrFromChar(char)
    if GetPlrFromChar then
