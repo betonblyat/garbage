@@ -85,7 +85,7 @@ Farms:AddToggle('Money farm', false, function(State)
     Settings.moneyfarm = State
 end)
 
-Farms:AddToggle('Full AFK', false, function(State)
+Farms:AddToggle('Void farm', false, function(State)
     Settings.afkfarm = State
 end)
 
