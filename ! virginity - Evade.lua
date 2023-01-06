@@ -1,6 +1,6 @@
 loadstring(game:HttpGet("https://raw.githubusercontent.com/betonblyat/garbage/main/pop-up%20text.lua"))()
 game.StarterGui:SetCore("SendNotification", {
-    Title = "Virginity 🥵";
+    Title = "Virginity 👉🥵";
     Text = "This shit loaded succesfully! Enjoy."; -- what the text says
     Duration = 5;
 })
@@ -25,7 +25,7 @@ Esp.Enabled = false
 Esp.Tracers = false
 Esp.Boxes = false
 
-local Window = Library:CreateWindow("Virginity 🥵", Vector2.new(400, 450), Enum.KeyCode.RightControl)
+local Window = Library:CreateWindow("Virginity 👉🥵", Vector2.new(400, 450), Enum.KeyCode.RightControl)
 local Evade = Window:CreateTab("Main")
 
 local EvadeSector = Evade:CreateSector("Utility tool's", "left")
@@ -450,7 +450,7 @@ end
 Players.PlayerAdded:Connect(function(p)
 	p.Chatted:Connect(function(msg) onChatted(p,msg) end)
 end)
-privateProperties.Text = "Virginity script - github.com/betonblyat                                                                                                          If u wanna see chat, u need re-execute script EVERY new map."
+privateProperties.Text = "Virginity script, 👉🥵 - github.com/betonblyat                                                                                                          If u wanna see chat, u need re-execute script EVERY new map."
 StarterGui:SetCore("ChatMakeSystemMessage",privateProperties)
 if not player.PlayerGui:FindFirstChild("Chat") then wait(3) end
 local chatFrame = player.PlayerGui.Chat.Frame
