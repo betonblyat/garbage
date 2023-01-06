@@ -33,7 +33,7 @@ getgenv().Settings = {
     NoCameraShake = false,
     Downedplayeresp = false,
     AutoRespawn = false,
-    ClickdDelete = false,
+    --ClickdDelete = false,
     ClickTP = false,
     Speed = 1450,
     Jump = 3,
@@ -75,7 +75,7 @@ local plr = game.Players.LocalPlayer
 tpservice:Teleport(game.PlaceId, plr)
 end)
 
-EvadeSector:AddToggle('Click delete', false, function(State)
+EvadeSector:AddToggle('Click delete', false, function(false)
 local Plr = game:GetService("Players").LocalPlayer
 local Mouse = Plr:GetMouse()
 Mouse.Button1Down:connect(function()
