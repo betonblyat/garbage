@@ -7,7 +7,7 @@ game.StarterGui:SetCore("SendNotification", {
 game.StarterGui:SetCore("SendNotification", {
     Title = "Credits - Clorium#3102";
     Text = "github.com/betonblyat"; -- what the text says
-    Duration = 5;
+    Duration = 25;
 })
 
 local queueonteleport = (syn and syn.queue_on_teleport) or queue_on_teleport or (fluxus and fluxus.queue_on_teleport)
