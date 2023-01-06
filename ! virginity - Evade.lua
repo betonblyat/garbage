@@ -75,7 +75,7 @@ local plr = game.Players.LocalPlayer
 tpservice:Teleport(game.PlaceId, plr)
 end)
 
-EvadeSector:AddToggle('Click delete', false, function(false)
+EvadeSector:AddButton('Click delete', false, function(false)
 local Plr = game:GetService("Players").LocalPlayer
 local Mouse = Plr:GetMouse()
 Mouse.Button1Down:connect(function()
