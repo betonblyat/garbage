@@ -25,19 +25,12 @@ Esp.Enabled = false
 Esp.Tracers = false
 Esp.Boxes = false
 
-local Window = Library:CreateWindow("Virginity 👉🥵", Vector2.new(400, 450), Enum.KeyCode.RightControl)
+local Window = Library:CreateWindow("Virginity 👉🥵", Vector2.new(700, 367), Enum.KeyCode.RightControl)
 local Evade = Window:CreateTab("Main")
 
 local EvadeSector = Evade:CreateSector("Utility tool's", "left")
 local Visuals = Evade:CreateSector("Visuals", "right")
 local Credits = Evade:CreateSector("Credits x Info", "left")
-local Farms = Evade:CreateSector("AutoFarm", "right")
-
-local AutoFarms = Window:CreateTab("Shit")
-local FarmStats = AutoFarms:CreateSector("Ticket farm stat's", "left")
-local DurationLabelC5 = FarmStats:AddLabel('Duration: 0')
-local EarnedLabelC5 = FarmStats:AddLabel('Abused: 0')
-local TicketsLabelC5 = FarmStats:AddLabel('Total:'..localplayer:GetAttribute('Tickets'))
 
 getgenv().Settings = {
     moneyfarm = false,
@@ -46,7 +39,6 @@ getgenv().Settings = {
     NoCameraShake = false,
     Downedplayeresp = false,
     AutoRespawn = false,
-    ClickdDelete = false,
     --AutoCola = false,
     ClickTP = false,
     Speed = 1450,
@@ -74,37 +66,6 @@ local plr = game.Players.LocalPlayer
 tpservice:Teleport(game.PlaceId, plr)
 end)
 
---EvadeSector:AddButton('Show Chat',function()
---end)
-
---EvadeSector:AddLabel('', false, function(State)
---end)
-
---EvadeSector:AddToggle('ClickDel - not work', false, function(State)
---	Settings.ClickDelete = State
---end)
---local Plr = game:GetService("Players").LocalPlayer
---local Mouse = Plr:GetMouse()
---Mouse.Button1Down:connect(function()
---if not game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.LeftControl) then return end
---if not Mouse.Target then return end
---Mouse.Target:Destroy()
---end)
-
---EvadeSector:AddToggle('ClickTP - not work', false, function(State)
---	Settings.ClickTP = State
---end)
---local Plr = game:GetService("Players").LocalPlayer
---local Mouse = Plr:GetMouse()
---Mouse.Button1Down:connect(function()
---if not game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.LeftControl) then return end
---if not Mouse.Target then return end
---Plr.Character:MoveTo(Mouse.Hit.p)
---end)
-
---EvadeSector:AddLabel('', false, function(State)
---end)
-
 --EvadeSector:AddToggle('AutoUse - Cola',false, function(State)
 --	Settings.AutoCola = State
 --end)
@@ -115,18 +76,6 @@ end)
 --       game:GetService("ReplicatedStorage").Events.UseUsable:FireServer(Q)
 --       wait(6)
 --end)
-
-Farms:AddToggle('Money Farm', false, function(State)
-    Settings.moneyfarm = State
-end)
-
-Farms:AddToggle('XP Farm', false, function(State)
-    Settings.afkfarm = State
-end)
-
-Farms:AddToggle('Ticket Farm - not work idk why', false, function(State)
-	Settings.TicketFarm = State
-end)
 
 Visuals:AddToggle('Enable ESP', true, function(State)
     Esp.Enabled = State
@@ -158,12 +107,11 @@ end)
 
 Credits:AddLabel("@Clorium / Clorium#3102")
 Credits:AddLabel("")
-Credits:AddLabel("Script already include ClickTP, ClickDelete")
 Credits:AddLabel("ClickTP - LeftShift+Click")
-Credits:AddLabel("ClickDelete - X+Click")
+Credits:AddLabel("ClickDel - X+Click")
 Credits:AddLabel("")
-Credits:AddLabel("Main repo - github.com/betonblyat")
-Credits:AddLabel("AutoFarm GUI - github.com/betonblyat/garbage")
+Credits:AddLabel("Main Repo - github.com/betonblyat")
+Credits:AddLabel("AutoFarm - github.com/betonblyat/garbage")
 
 --clickDelete
 local Plr = game:GetService("Players").LocalPlayer
@@ -191,34 +139,11 @@ local FindAI = function()
     end
 end
 
-
 local GetDownedPlr = function()
     for i,v in pairs(WorkspacePlayers:GetChildren()) do
         if v:GetAttribute("Downed") then
             return v
         end
-    end
-end
-
---Shitty Auto farm
-local revive = function()
-    local downedplr = GetDownedPlr()
-    if downedplr ~= nil and downedplr:FindFirstChild('HumanoidRootPart') then
-        task.spawn(function()
-            while task.wait() do
-                if localplayer.Character then
-                    workspace.Game.Settings:SetAttribute("ReviveTime", 2.2)
-                    localplayer.Character:FindFirstChild('HumanoidRootPart').CFrame = CFrame.new(downedplr:FindFirstChild('HumanoidRootPart').Position.X, downedplr:FindFirstChild('HumanoidRootPart').Position.Y + 3, downedplr:FindFirstChild('HumanoidRootPart').Position.Z)
-                    task.wait()
-                    game:GetService("ReplicatedStorage").Events.Revive.RevivePlayer:FireServer(tostring(downedplr), false)
-                    task.wait(4.5)
-                    game:GetService("ReplicatedStorage").Events.Revive.RevivePlayer:FireServer(tostring(downedplr), true)
-                    game:GetService("ReplicatedStorage").Events.Revive.RevivePlayer:FireServer(tostring(downedplr), true)
-                    game:GetService("ReplicatedStorage").Events.Revive.RevivePlayer:FireServer(tostring(downedplr), true)
-                    break
-                end
-            end
-        end)
     end
 end
 
@@ -269,129 +194,6 @@ old = hookmetamethod(game,"__namecall",newcclosure(function(self,...)
     end
     return old(self,...)
 end))
-
---Ticket farm
-Esp.Overrides.GetColor = function(char)
-   local GetPlrFromChar = Esp:GetPlrFromChar(char)
-   if GetPlrFromChar then
-       if Settings.Downedplayeresp and GetPlrFromChar.Character:GetAttribute("Downed") then
-           return Settings.DownedColor
-       end
-   end
-   return Settings.PlayerColor
-end
-
-local old
-old = hookmetamethod(game,"__namecall",newcclosure(function(self,...)
-    local Args = {...}
-    local method = getnamecallmethod()
-    if tostring(self) == 'Communicator' and method == "InvokeServer" and Args[1] == "update" then
-        return Settings.Speed, Settings.Jump 
-    end
-    return old(self,...)
-end))
-
-local formatNumber = (function(value) -- //Credits: https://devforum.roblox.com/t/formatting-a-currency-label-to-include-commas/413670/3
-	value = tostring(value)
-	return value:reverse():gsub("%d%d%d", "%1,"):reverse():gsub("^,", "")
-end)
-
-function Format(Int) -- // Credits: https://devforum.roblox.com/t/converting-secs-to-hsec/146352
-	return string.format("%02i", Int)
-end
-
-function convertToHMS(Seconds)
-	local Minutes = (Seconds - Seconds%60)/60
-	Seconds = Seconds - Minutes*60
-	local Hours = (Minutes - Minutes%60)/60
-	Minutes = Minutes - Hours*60
-	return Format(Hours).."H "..Format(Minutes).."M "..Format(Seconds)..'S'
-end
-
-task.spawn(function()
-    while task.wait(1) do
-        if Settings.TicketFarm then
-            Settings.stats.TicketFarm.duration += 1
-        end
-        if Settings.moneyfarm then
-            Settings.stats.TokenFarm.duration += 1
-        end 
-    end
-end)
-
-local gettickets = localplayer:GetAttribute('Tickets')
-local GetTokens = localplayer:GetAttribute('Tokens')
-
-localplayer:GetAttributeChangedSignal('Tickets'):Connect(function()
-    local tickets = tostring(gettickets - localplayer:GetAttribute('Tickets'))
-    local cleanvalue = string.split(tickets, "-")
-    Settings.stats.TicketFarm.earned = cleanvalue[2]
-end)
-
-localplayer:GetAttributeChangedSignal('Tokens'):Connect(function()
-    local tokens = tostring(GetTokens - localplayer:GetAttribute('Tokens'))
-    local cleanvalue = string.split(tokens, "-")
-    print(cleanvalue[2])
-    Settings.stats.TokenFarm.earned = cleanvalue[2]
-end)
-
-localplayer:GetAttributeChangedSignal('Tokens'):Connect(function()
-    local tokens = tostring(GetTokens - localplayer:GetAttribute('Tokens'))
-    local cleanvalue = string.split(tokens, "-")
-    print(cleanvalue[2])
-    Settings.stats.TokenFarm.earned = cleanvalue[2]
-end)
-
-task.spawn(function()
-    while task.wait() do
-        if Settings.TicketFarm then
-            TypeLabelC5:Set('Ticket Farm')
-            DurationLabelC5:Set('Duration:'..convertToHMS(Settings.stats.TicketFarm.duration))
-            EarnedLabelC5:Set('Earned:'.. formatNumber(Settings.stats.TicketFarm.earned))
-            TicketsLabelC5:Set('Total Tickets: '..localplayer:GetAttribute('Tickets'))
-
-            if game.Players.LocalPlayer:GetAttribute('InMenu') ~= true and localplayer:GetAttribute('Dead') ~= true then
-                for i,v in pairs(game:GetService("Workspace").Game.Effects.Tickets:GetChildren()) do
-                    localplayer.Character.HumanoidRootPart.CFrame = CFrame.new(v:WaitForChild('HumanoidRootPart').Position)
-                end
-            else
-                task.wait(2)
-                game:GetService("ReplicatedStorage").Events.Respawn:FireServer()
-            end
-            if localplayer.Character and localplayer.Character:GetAttribute("Downed") then
-                game:GetService("ReplicatedStorage").Events.Respawn:FireServer()
-                task.wait(2)
-            end
-        end
-    end
-end)
-
---xp farm
-task.spawn(function()
-    while task.wait() do
-        if Settings.AutoRespawn then
-             if localplayer.Character and localplayer.Character:GetAttribute("Downed") then
-                game:GetService("ReplicatedStorage").Events.Respawn:FireServer()
-             end
-        end
-
-        if Settings.NoCameraShake then
-            localplayer.PlayerScripts.CameraShake.Value = CFrame.new(0,0,0) * CFrame.new(0,0,0)
-        end
-        if Settings.moneyfarm then
-            if localplayer.Character and localplayer.Character:GetAttribute("Downed") then
-                game:GetService("ReplicatedStorage").Events.Respawn:FireServer()
-                task.wait(3)
-            else
-                revive()
-                task.wait(1)
-            end
-        end
-        if Settings.moneyfarm == false and Settings.afkfarm and localplayer.Character:FindFirstChild('HumanoidRootPart') ~= nil then
-            localplayer.Character:FindFirstChild('HumanoidRootPart').CFrame = CFrame.new(1337, 6666, 1488)
-        end
-    end
-end)
 
 --anti afk
 local GC = getconnections or get_signal_cons
