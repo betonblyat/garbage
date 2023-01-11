@@ -156,10 +156,32 @@ Visuals:AddColorpicker("Player Color", Color3.fromRGB(0, 255, 30), function(Colo
     Settings.PlayerColor = Color
 end)
 
-Credits:AddLabel("@Clorium ")
-Credits:AddLabel("Gui bind - RightCtrl ")
-Credits:AddLabel(" ")
-Credits:AddLabel("github.com/betonblyat")
+Credits:AddLabel("@Clorium / Clorium#3102")
+Credits:AddLabel("")
+Credits:AddLabel("Script already include ClickTP, ClickDelete")
+Credits:AddLabel("ClickTP - LeftShift+Click")
+Credits:AddLabel("ClickDelete - X+Click")
+Credits:AddLabel("")
+Credits:AddLabel("Main repo - github.com/betonblyat")
+Credits:AddLabel("AutoFarm GUI - github.com/betonblyat/garbage")
+
+--clickDelete
+local Plr = game:GetService("Players").LocalPlayer
+local Mouse = Plr:GetMouse()
+Mouse.Button1Down:connect(function()
+if not game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.X) then return end
+if not Mouse.Target then return end
+Mouse.Target:Destroy()
+end)
+
+--ClickTP
+local Plr = game:GetService("Players").LocalPlayer
+local Mouse = Plr:GetMouse()
+Mouse.Button1Down:connect(function()
+if not game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.LeftShift) then return end
+if not Mouse.Target then return end
+Plr.Character:MoveTo(Mouse.Hit.p)
+end)
 
 local FindAI = function()
     for _,v in pairs(WorkspacePlayers:GetChildren()) do
