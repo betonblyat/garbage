@@ -1,0 +1,303 @@
+local a = loadstring(game:HttpGet("https://raw.githubusercontent.com/betonblyat/garbage/main/evade%20-%20autofarm%2C%20module"))()
+local b = loadstring(game:HttpGet("https://raw.githubusercontent.com/betonblyat/garbage/main/evade%20-%20autofarm%2C%20client"))() --gui
+local c = loadstring(game:HttpGet("https://raw.githubusercontent.com/betonblyat/garbage/main/evade%20-%20autofarm%2C%20lib1%20(change%20colors)"))() --lib1
+local e = loadstring(game:HttpGet("https://raw.githubusercontent.com/betonblyat/garbage/main/evade%20-%20autafarm%2C%20shitesp"))()
+e.Enabled = false
+e.Tracers = false
+e.Boxes = false
+local f = c.CreateLib("github.com/betonblyat - Virginity script, aka best paste")
+local g = Instance.new("ScreenGui")
+
+game.StarterGui:SetCore("SendNotification", {
+    Title = "Virginity 👉🥵";
+    Text = "This shit loaded succesfully! Enjoy."; -- what the text says
+    Duration = 9999;
+})
+game.StarterGui:SetCore("SendNotification", {
+    Title = "Credits - Clorium#3102";
+    Text = "github.com/betonblyat"; -- what the text says
+    Duration = 9999;
+})
+
+local t = false
+local u = false
+local v = false
+local w = false
+local x = false
+local y = false
+local z = false
+local A = false
+local B = game:GetService("ReplicatedStorage")
+local C = game:GetService("CoreGui")
+local D = game:GetService("Workspace")
+local E = game:GetService("Lighting")
+local F = game:GetService("VirtualInputManager")
+local G = game:GetService("Workspace").Game.Players
+local H = game:GetService("Players")
+local I = H.LocalPlayer
+local J = B:WaitForChild("Events", 1337)
+local K = H.LocalPlayer
+getgenv().money = true
+getgenv().revivedie = true
+getgenv().autowistle = true
+getgenv().autochat = true
+getgenv().AutoDrink = true
+getgenv().NoCameraShake = true
+getgenv().Settings = {moneyfarm = false, afkfarm = false, NoCameraShake = false, Speed = 1450, Jump = 3, reviveTime = 3}
+local L = function()
+    for r, s in pairs(G:GetChildren()) do
+        if not H:FindFirstChild(s.Name) then
+            return s
+        end
+    end
+end
+
+local M = function()
+    for N, s in pairs(G:GetChildren()) do
+        if s:GetAttribute("Downed") then
+            return s
+        end
+    end
+end
+
+local O = function()
+    local P = M()
+    if P ~= nil and P:FindFirstChild("HumanoidRootPart") then
+        task.spawn(
+            function()
+                while task.wait() do
+                    if I.Character then
+                        workspace.Game.Settings:SetAttribute("ReviveTime", 2.2)
+                        I.Character:FindFirstChild("HumanoidRootPart").CFrame =
+                            CFrame.new(
+                            P:FindFirstChild("HumanoidRootPart").Position.X,
+                            P:FindFirstChild("HumanoidRootPart").Position.Y + 3,
+                            P:FindFirstChild("HumanoidRootPart").Position.Z
+                        )
+                        task.wait()
+                        game:GetService("ReplicatedStorage").Events.Revive.RevivePlayer:FireServer(tostring(P), false)
+                        task.wait(4.5)
+                        game:GetService("ReplicatedStorage").Events.Revive.RevivePlayer:FireServer(tostring(P), true)
+                        game:GetService("ReplicatedStorage").Events.Revive.RevivePlayer:FireServer(tostring(P), true)
+                        game:GetService("ReplicatedStorage").Events.Revive.RevivePlayer:FireServer(tostring(P), true)
+                        break
+                    end
+                end
+            end
+        )
+    end
+end
+
+task.spawn(
+    function()
+        while task.wait() do
+            if Settings.AutoRespawn then
+                if I.Character and I.Character:GetAttribute("Downed") then
+                    game:GetService("ReplicatedStorage").Events.Respawn:FireServer()
+                end
+            end
+            if Settings.moneyfarm then
+                if I.Character and I.Character:GetAttribute("Downed") then
+                    game:GetService("ReplicatedStorage").Events.Respawn:FireServer()
+                    task.wait(3)
+                else
+                    O()
+                    task.wait(1)
+                end
+            end
+            if
+                Settings.moneyfarm == false and Settings.afkfarm and
+                    I.Character:FindFirstChild("HumanoidRootPart") ~= nil
+             then
+                I.Character:FindFirstChild("HumanoidRootPart").CFrame = CFrame.new(6007, 7005, 8005)
+            end
+        end
+    end
+)
+local T = f:NewTab("Who r u")
+local U = T:NewSection("Hello, " .. game.Players.LocalPlayer.Name)
+local V = f:NewTab("Farm's")
+local W = V:NewSection("Shit farm below")
+
+local a0 = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId)
+
+U:NewButton(
+    "GitHub | Click To Copy",
+    "?",
+    function()
+        setclipboard("https://github.com/betonblyat")
+    end
+)
+U:NewKeybind(
+    "Ui Toggle (Key-Bind)",
+    "?",
+    Enum.KeyCode.Z,
+    function()
+        c:ToggleUI()
+    end
+)
+
+game:GetService("UserInputService").JumpRequest:connect(
+    function()
+        if a3 then
+            game:GetService "Players".LocalPlayer.Character:FindFirstChildOfClass "Humanoid":ChangeState("Jumping")
+        end
+    end
+)
+local M = function()
+    for N, s in pairs(G:GetChildren()) do
+        if s:GetAttribute("Downed") then
+            return s
+        end
+    end
+end
+
+W:NewToggle(
+    "AFK Farm",
+    "?",
+    function(a4)
+        local a5 = I.Character:FindFirstChild("HumanoidRootPart").CFrame
+        if a4 then
+            I.Character:FindFirstChild("HumanoidRootPart").CFrame = CFrame.new(6007, 7005, 8005)
+        else
+            I.Character:FindFirstChild("HumanoidRootPart").CFrame = a5
+        end
+    end
+)
+function O()
+    local P = M()
+    if P ~= nil and P:FindFirstChild("HumanoidRootPart") then
+        task.spawn(
+            function()
+                while task.wait() do
+                    if I.Character then
+                        workspace.Game.Settings:SetAttribute("ReviveTime", 2.2)
+                        I.Character:FindFirstChild("HumanoidRootPart").CFrame =
+                            CFrame.new(
+                            P:FindFirstChild("HumanoidRootPart").Position.X,
+                            P:FindFirstChild("HumanoidRootPart").Position.Y + 3,
+                            P:FindFirstChild("HumanoidRootPart").Position.Z
+                        )
+                        task.wait()
+                        game:GetService("ReplicatedStorage").Events.Revive.RevivePlayer:FireServer(tostring(P), false)
+                        task.wait(4.5)
+                        game:GetService("ReplicatedStorage").Events.Revive.RevivePlayer:FireServer(tostring(P), true)
+                        game:GetService("ReplicatedStorage").Events.Revive.RevivePlayer:FireServer(tostring(P), true)
+                        game:GetService("ReplicatedStorage").Events.Revive.RevivePlayer:FireServer(tostring(P), true)
+                        break
+                    end
+                end
+            end
+        )
+    end
+end
+W:NewToggle(
+    "Money Farm",
+    "?",
+    function(a4)
+        Settings.moneyfarm = a4
+    end
+)
+W:NewToggle(
+    "Ticket Farm",
+    "?",
+    function(s)
+        x = s
+    end
+)
+
+task.spawn(
+    function()
+        while task.wait(0.05) do
+            if u then
+                pcall(
+                    function()
+                        ClearESP("AI_Tracker")
+                        local a7 = D:WaitForChild("Game", 1337).Players
+                        for N, s in pairs(a7:GetChildren()) do
+                            if not game.Players:FindFirstChild(s.Name) then
+                                local l = K:DistanceFromCharacter(s.PrimaryPart.Position)
+                                Simple_Create(s.HumanoidRootPart, s.Name, "AI_Tracker", math.floor(l + 0.5))
+                            end
+                        end
+                    end
+                )
+            else
+                ClearESP("AI_Tracker")
+            end
+        end
+    end
+)
+game:GetService("Players").PlayerAdded:Connect(
+    function(K)
+        K.CharacterAdded:Connect(
+            function(a6)
+                if t then
+                    d:AddOutline(a6)
+                    d:AddNameTag(a6)
+                end
+            end
+        )
+    end
+)
+task.spawn(
+    function()
+        while task.wait() do
+            if w then
+                K.PlayerScripts:WaitForChild("CameraShake", 1234).Value = CFrame.new(0, 0, 0) * CFrame.Angles(0, 0, 0)
+            end
+        end
+    end
+)
+local a8 = I:GetAttribute("Tickets")
+local a9 = I:GetAttribute("Tokens")
+local I = game.Players.LocalPlayer
+task.spawn(
+    function()
+        while task.wait() do
+            if x then
+                if game.Players.LocalPlayer:GetAttribute("InMenu") ~= true and I:GetAttribute("Dead") ~= true then
+                    for N, s in pairs(game:GetService("Workspace").Game.Effects.Tickets:GetChildren()) do
+                        I.Character.HumanoidRootPart.CFrame = CFrame.new(s:WaitForChild("HumanoidRootPart").Position)
+                    end
+                else
+                    task.wait(2)
+                    game:GetService("ReplicatedStorage").Events.Respawn:FireServer()
+                end
+                if I.Character and I.Character:GetAttribute("Downed") then
+                    game:GetService("ReplicatedStorage").Events.Respawn:FireServer()
+                    task.wait(2)
+                end
+            end
+        end
+    end
+)
+local at
+at =
+    hookmetamethod(
+    game,
+    "__namecall",
+    newcclosure(
+        function(self, ...)
+            local au = {...}
+            local av = getnamecallmethod()
+            if tostring(self) == "Communicator" and av == "InvokeServer" and au[1] == "update" then
+                return Settings.Speed, Settings.Jump
+            end
+            return at(self, ...)
+        end
+    )
+)
+game:GetService("RunService").RenderStepped:Connect(
+    function()
+        pcall(
+            function()
+                if game.Players.LocalPlayer.Character.Humanoid.MoveDirection.Magnitude > 0 then
+                    game.Players.LocalPlayer.Character:TranslateBy(
+                        game.Players.LocalPlayer.Character.Humanoid.MoveDirection * a1 / 100
+                    )
+                end
+            end
+        )
+    end
+)
